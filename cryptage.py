@@ -2,9 +2,9 @@ import string
 
 caracteres = string.ascii_lowercase
 
-def crypt(message):
+def crypt(message, pas=1):
     result = ""
     for c in message:
         index = caracteres.index(c)
-        result += caracteres[(index + 1) % len(caracteres)]
-    return result
+        result += caracteres[(index + pas) % len(caracteres)]
+    return result + str(pas)
